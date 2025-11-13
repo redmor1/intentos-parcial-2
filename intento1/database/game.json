@@ -1,0 +1,24 @@
+{
+  "guardians": [
+    {
+      "id": 1,
+      "name": "GUARDIAN_1",
+      "level": 1,
+      "xp": 1,
+      "energy": 100,
+      "skills": [],
+      "items": []
+    },
+    {
+      "id": 2,
+      "name": "GUARDIAN_2",
+      "level": 1,
+      "xp": 1,
+      "energy": 80,
+      "skills": ["Pepe"],
+      "items": []
+    }
+  ],
+  "challenges": [],
+  "duels": []
+}
