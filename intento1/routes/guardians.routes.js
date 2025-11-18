@@ -3,7 +3,6 @@ const guardiansController = require("../controllers/guardians.controller");
 
 const guardiansRouter = Router();
 
-// Agregar filtros opcionales: skill, fragmento de nombre, rango de nivel
 guardiansRouter.get("/guardians", guardiansController.getGuardians);
 
 guardiansRouter.post("/guardians", guardiansController.createGuardian);

@@ -27,6 +27,7 @@ const modifyGuardianEnergySchema = Joi.object().keys({
 });
 
 const modifyGuardianItemsSchema = Joi.object().keys({
+  action: Joi.valid("delete", "add").required(),
   items: Joi.array()
     .items(
       Joi.object().keys({
@@ -84,6 +85,27 @@ const guardiansService = {
       return guardian;
     } catch (e) {
       console.error(e);
+    }
+  },
+  getById: async function getById(id) {
+    try {
+      const guardian = await guardiansRepository.getById(id);
+      return guardian;
+    } catch (e) {
+      console.error(e);
+      throw e;
+    }
+  },
+  updateGuardian: async function updateGuardian(guardianData, id) {
+    try {
+      const guardian = await guardiansRepository.updateGuardian(
+        guardianData,
+        Number(id)
+      );
+      return guardian;
+    } catch (e) {
+      console.error(e);
+      throw e;
     }
   },
 };

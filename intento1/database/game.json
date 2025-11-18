@@ -12,13 +12,68 @@
     {
       "id": 2,
       "name": "GUARDIAN_2",
+      "level": 3,
+      "xp": 216,
+      "energy": 70,
+      "skills": ["Pepe"],
+      "items": []
+    },
+    {
+      "id": 3,
+      "name": "GUARDIAN_1",
       "level": 1,
       "xp": 1,
-      "energy": 80,
-      "skills": ["Pepe"],
+      "energy": 100,
+      "skills": [],
       "items": []
     }
   ],
-  "challenges": [],
-  "duels": []
+  "challenges": [
+    {
+      "id": 1,
+      "title": "DESAFIO PEPE",
+      "difficulty": 10,
+      "energyCost": 50,
+      "rewardFormula": "difficulty * 8 + energyCost * 2",
+      "requiredSkill": "Pepe"
+    },
+    {
+      "id": 2,
+      "title": "DESAFI PEPE",
+      "difficulty": 1,
+      "energyCost": 50,
+      "rewardFormula": "difficulty * 8 + energyCost * 2",
+      "requiredSkill": "Pepe"
+    }
+  ],
+  "duels": [
+    {
+      "id": 807894,
+      "guardian1": 1,
+      "guardian2": 2,
+      "winner": 2,
+      "power1": 11.2,
+      "power2": 75.2,
+      "timeStamp": "2025-11-18T06:26:13.325Z"
+    },
+    {
+      "id": 974673,
+      "guardian1": 1,
+      "guardian2": 2,
+      "winner": 2,
+      "power1": 1.2,
+      "power2": 99.2,
+      "timeStamp": "2025-11-18T06:27:44.490Z"
+    },
+    {
+      "id": 308290,
+      "guardian1": 1,
+      "guardian2": 2,
+      "winner": 2,
+      "power1": -8.8,
+      "power2": 98.2,
+      "timeStamp": "2025-11-18T06:27:45.217Z"
+    }
+  ],
+  "challengesAttempts": [{ "guardianId": 2, "status": "failed" }]
 }

@@ -1,4 +1,5 @@
 const guardiansService = require("../services/guardians.service");
+const { calculateRewardFormula } = require("../utils/formulas");
 
 const guardiansController = {
   createGuardian: async function createGuardian(req, res, next) {
@@ -42,6 +43,7 @@ const guardiansController = {
         data,
         id
       );
+
       return res.status(200).json({ guardian: guardianUpdated });
     } catch (e) {
       console.error(e);
