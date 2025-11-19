@@ -14,7 +14,6 @@ const guardiansController = {
   },
   getGuardians: async function getGuardians(req, res, next) {
     const filters = req.query;
-    console.log(filters);
     try {
       const guardians = await guardiansService.getGuardians(filters);
       return res.status(200).json({ guardians });

@@ -3,17 +3,16 @@ const duelsService = require("../services/duels.service");
 const duelsController = {
   createDuel: async function createDuel(req, res, next) {
     const data = req.body;
-    try {
-      const duel = await duelsService.createDuel(data);
-      return res.status(200).json({ duel });
-    } catch (e) {
-      console.error(e);
-      return res.status(500).json({ error: e.message });
-    }
+
+    const duel = await duelsService.createDuel(data);
+    return res.status(200).json({ duel });
   },
   getDuels: async function getDuels(req, res, next) {
-    const filters = req.query;
-    console.log(filters);
+    let filters = req.query;
+    if (filters.winner) {
+      filters.winner = Number(filters.winner);
+    }
+
     try {
       const duels = await duelsService.getDuels(filters);
       return res.status(200).json({ duels });

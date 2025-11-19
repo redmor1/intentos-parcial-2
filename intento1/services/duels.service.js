@@ -34,48 +34,43 @@ const createDuelSchema = Joi.object().keys({
 
 const duelsService = {
   createDuel: async function createDuel(data) {
-    try {
-      const { error } = createDuelSchema.validate(data);
-      if (error) {
-        throw new Error(error.details[0].message);
-      }
-      const guardian1 = await guardiansService.getById(data.guardian1);
-      const guardian2 = await guardiansService.getById(data.guardian2);
-      const duelObject = calculateWinnerDuelFormula(guardian1, guardian2);
-      const duel = await duelsRepository.createDuel(duelObject);
-      // both lose 10 energy points
-      await guardiansService.updateGuardianEnergy(
-        {
-          energy: guardian1.energy - 10,
-        },
-        guardian1.id
-      );
-      await guardiansService.updateGuardianEnergy(
-        {
-          energy: guardian2.energy - 10,
-        },
-        guardian2.id
-      );
-
-      if (duel.winner == guardian1.id) {
-        const rewardExp = calculateExp(duel.power1, duel.power2);
-        guardian1.xp += rewardExp;
-        levelUp(guardian1);
-        await guardiansService.updateGuardian(guardian1, guardian1.id);
-      }
-
-      if (duel.winner == guardian2.id) {
-        const rewardExp = calculateExp(duel.power2, duel.power1);
-        guardian2.xp += rewardExp;
-        levelUp(guardian2);
-        await guardiansService.updateGuardian(guardian2, guardian2.id);
-      }
-
-      return duel;
-    } catch (e) {
-      console.error(e);
-      throw e;
+    const { error } = createDuelSchema.validate(data);
+    if (error) {
+      throw new Error(error.details[0].message);
     }
+    const guardian1 = await guardiansService.getById(data.guardian1);
+    const guardian2 = await guardiansService.getById(data.guardian2);
+    const duelObject = calculateWinnerDuelFormula(guardian1, guardian2);
+    const duel = await duelsRepository.createDuel(duelObject);
+    // both lose 10 energy points
+    await guardiansService.updateGuardianEnergy(
+      {
+        energy: guardian1.energy - 10,
+      },
+      guardian1.id
+    );
+    await guardiansService.updateGuardianEnergy(
+      {
+        energy: guardian2.energy - 10,
+      },
+      guardian2.id
+    );
+
+    if (duel.winner == guardian1.id) {
+      const rewardExp = calculateExp(duel.power1, duel.power2);
+      guardian1.xp += rewardExp;
+      levelUp(guardian1);
+      await guardiansService.updateGuardian(guardian1, guardian1.id);
+    }
+
+    if (duel.winner == guardian2.id) {
+      const rewardExp = calculateExp(duel.power2, duel.power1);
+      guardian2.xp += rewardExp;
+      levelUp(guardian2);
+      await guardiansService.updateGuardian(guardian2, guardian2.id);
+    }
+
+    return duel;
   },
   getDuels: async function getDuels(filters) {
     try {

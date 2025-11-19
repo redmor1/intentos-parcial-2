@@ -1,0 +1,25 @@
+{
+  "alchemists": [
+    {
+      "name": "Pepe",
+      "id": 496556,
+      "rank": 1,
+      "wisdomPoints": 0,
+      "mana": 150,
+      "knownElements": ["Pepe"],
+      "artifacts": []
+    }
+  ],
+  "formulas": [
+    {
+      "name": "Formula1",
+      "toxicity": 2,
+      "impactFormula": "toxicity * 5 + manaCost",
+      "requiredElement": "Pepe",
+      "manaCost": 40,
+      "id": 503058
+    }
+  ],
+  "tournaments": [],
+  "experiments": []
+}

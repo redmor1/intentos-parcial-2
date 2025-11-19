@@ -1,4 +1,4 @@
-const challengesService = require("../services/challenges.service");
+const { challengesService } = require("../services/challenges.service");
 
 const challengesController = {
   getChallenges: async function getChallenges(req, res, next) {
