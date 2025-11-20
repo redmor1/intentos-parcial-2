@@ -1,0 +1,40 @@
+{
+  "colonists": [
+    {
+      "name": "Pepe",
+      "id": 96881134,
+      "rank": "Rookie",
+      "xp": 0,
+      "oxygen": 100,
+      "credits": 50,
+      "status": "ACTIVE",
+      "stats": { "strength": 1, "intelligence": 1, "adaptability": 1 }
+    },
+    {
+      "name": "Rodolfo",
+      "id": 61615935,
+      "rank": "Rookie",
+      "xp": 0,
+      "oxygen": 100,
+      "credits": 50,
+      "status": "ACTIVE",
+      "stats": { "strength": 1, "intelligence": 3, "adaptability": 1 }
+    }
+  ],
+  "expeditions": [
+    {
+      "codeName": "EXPEDICION 1",
+      "difficulty": 1,
+      "oxygenCost": 20,
+      "creditReward": 40,
+      "riskFactor": "(difficulty * 2) - (intelligence + adaptability)",
+      "id": 33718700
+    }
+  ],
+  "expeditionAttempts": [33718700],
+  "sabotages": [
+    { "attackerId": 61615935, "defenderId": 96881134, "winner": 96881134 },
+    { "attackerId": 96881134, "defenderId": 61615935, "winner": 61615935 },
+    { "attackerId": 96881134, "defenderId": 61615935, "winner": 61615935 }
+  ]
+}
