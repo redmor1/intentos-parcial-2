@@ -27,15 +27,19 @@ export const colonistRepository = {
   put: async function put(id, data) {
     const fileJson = await readDB();
     let colonists = fileJson.colonists;
-    let colonist = await this.getById(id);
-    // encontrar el id y lo que voy a editar
+    const colonistIndex = colonists.findIndex((c) => c.id === id);
 
-    if (colonist) {
-      colonist = { ...colonist, ...data };
+    if (colonistIndex === -1) {
+      throw new Error("No se encontro al colonist");
     }
 
+    colonists[colonistIndex] = {
+      ...colonists[colonistIndex],
+      ...data,
+    };
+
     await writeDB(fileJson);
-    return colonist;
+    return colonists[colonistIndex];
   },
   getById: async function getById(id) {
     const fileJson = await readDB();

@@ -19,15 +19,15 @@ export const sabotagesServices = {
     if (attackPower > defensePower) {
       const creditsToSteal = Math.floor(defender.credits * 0.2);
       attacker.credits += creditsToSteal;
-      defender.credits - +creditsToSteal;
+      defender.credits += creditsToSteal;
       if (Math.abs(attackPower, defensePower) > 50) {
         defender.status = "INJURED";
       }
       sabotageObject.winner = attackerId;
     } else {
       defender.xp += 50;
-      attacker.credits - +50;
-      attacker.oxygen - +10;
+      attacker.credits += 50;
+      attacker.oxygen += 10;
       sabotageObject.winner = defenderId;
     }
 
