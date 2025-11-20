@@ -1,0 +1,155 @@
+{
+  "bots": [
+    {
+      "name": "Pepe3",
+      "processing": 12,
+      "id": 5513,
+      "generation": 1,
+      "memory": 10,
+      "battery": 60,
+      "load": 0,
+      "xp": 12,
+      "rank": 2,
+      "modules": [
+        {
+          "name": "test",
+          "weight": 20,
+          "bonusType": "attack"
+        },
+        {
+          "name": "test",
+          "weight": 20,
+          "bonusType": "defense"
+        }
+      ]
+    },
+    {
+      "name": "Pepe3",
+      "processing": 12,
+      "id": 55793,
+      "generation": 1,
+      "memory": 10,
+      "battery": 100,
+      "load": 0,
+      "xp": 0,
+      "rank": 1,
+      "modules": [
+        {
+          "name": "test",
+          "weight": 20,
+          "bonusType": "attack"
+        },
+        {
+          "name": "test",
+          "weight": 20,
+          "bonusType": "defense"
+        }
+      ]
+    },
+    {
+      "name": "Pepe3",
+      "processing": 12,
+      "modules": [
+        {
+          "name": "test1",
+          "weight": 50,
+          "bonusType": "attack"
+        }
+      ],
+      "id": 48032,
+      "generation": 1,
+      "memory": 10,
+      "battery": 100,
+      "load": 0,
+      "xp": 0,
+      "rank": 1
+    },
+    {
+      "name": "Pepe3",
+      "processing": 12,
+      "modules": [
+        {
+          "name": "test1",
+          "weight": 50,
+          "bonusType": "attack"
+        }
+      ],
+      "id": 34534,
+      "generation": 1,
+      "memory": 10,
+      "battery": 100,
+      "load": 0,
+      "xp": 0,
+      "rank": 1
+    },
+    {
+      "name": "Pepe3",
+      "processing": 12,
+      "modules": [
+        {
+          "name": "test1",
+          "weight": 50,
+          "bonusType": "attack"
+        },
+        {
+          "name": "test1",
+          "weight": 50,
+          "bonusType": "attack"
+        },
+        {
+          "name": "test1",
+          "weight": 50,
+          "bonusType": "attack"
+        }
+      ],
+      "id": 20083,
+      "generation": 1,
+      "memory": 10,
+      "battery": 100,
+      "load": 0,
+      "xp": 0,
+      "rank": 1
+    }
+  ],
+  "tracks": [
+    {
+      "name": "Track1",
+      "complexity": 1,
+      "length": 2,
+      "processingDemand": 2,
+      "energyCostBase": 2,
+      "id": 18232
+    }
+  ],
+  "logicTests": [
+    {
+      "title": "logic test 1",
+      "difficulty": 2,
+      "timeLimit": 2,
+      "baseRewardFormula": "difficulty * 2",
+      "penaltyFormula": "difficulty * 2",
+      "id": 92909
+    }
+  ],
+  "trainings": [
+    {
+      "botId": 5513,
+      "trackId": 18232,
+      "xpGained": 12
+    }
+  ],
+  "duels": [
+    {
+      "bot1": 1,
+      "bot2": 2
+    },
+    {
+      "bot1": 5513,
+      "bot2": 55793
+    },
+    {
+      "bot1": 5513,
+      "bot2": 55793
+    }
+  ]
+}
